@@ -17,7 +17,6 @@ const StyledInput = styled.input`
   width: 100%;
   border: none;
   background: none;
-  border-bottom: 1px solid #2b689b;
   padding: 10px 25px;
 
   font-family: "Inter";
@@ -53,7 +52,18 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ type, placeholder }) => {
+const Error = styled.p`
+  margin-top: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+
+  color: #f13f58;
+`;
+
+const Input = ({ type, placeholder, errorText, changeHandler }) => {
   return (
     <InputBox>
       <StyledInput
@@ -61,8 +71,13 @@ const Input = ({ type, placeholder }) => {
         placeholder={placeholder}
         required
         autocomplete="false"
+        onChange={(e) => changeHandler(e)}
+        style={{
+          borderBottom: errorText ? "1px solid #FFB6C1" : "1px solid #2b689b",
+        }}
       />
       <span></span>
+      <Error>{errorText}</Error>
     </InputBox>
   );
 };
