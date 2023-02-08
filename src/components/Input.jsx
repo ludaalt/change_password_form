@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const InputBox = styled.div`
@@ -76,10 +77,17 @@ const Error = styled.p`
 `;
 
 const Input = ({ type, placeholder, errorText, changeHandler }) => {
+  const [inputType, setInputType] = useState(type);
+
+  const showPasswordHandler = () => {
+    if (inputType === "password") setInputType("text");
+    if (inputType === "text") setInputType("password");
+  };
+
   return (
     <InputBox>
       <StyledInput
-        type={type}
+        type={inputType}
         placeholder={placeholder}
         required
         autocomplete="false"
@@ -89,6 +97,18 @@ const Input = ({ type, placeholder, errorText, changeHandler }) => {
         }}
       />
       <span></span>
+      {type === "password" && (
+        <img
+          src="./img/icons/show-password.svg"
+          onClick={() => showPasswordHandler()}
+          alt="Show/hide password"
+          style={{
+            position: "absolute",
+            right: "20px",
+            top: "5px",
+          }}
+        />
+      )}
       <Error>{errorText}</Error>
     </InputBox>
   );
