@@ -24,6 +24,10 @@ const StyledButton = styled.button`
     background-position: 90% 50%;
     transition: background-position 0.3s;
   }
+
+  @media (max-width: 550px) {
+    padding: 20px 70px 20px 30px;
+  }
 `;
 
 const SubmitButton = ({ title }) => {

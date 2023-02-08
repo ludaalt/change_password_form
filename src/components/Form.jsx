@@ -15,6 +15,11 @@ const StyledForm = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 550px) {
+    width: 90%;
+    padding: 30px 20px;
+  }
 `;
 
 const FormTitle = styled.h3`

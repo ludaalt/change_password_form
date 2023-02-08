@@ -24,6 +24,10 @@ const StyledInput = styled.input`
   font-weight: 400;
   font-size: 18px;
 
+  @media (max-width: 335px) {
+    padding: 8px 12px;
+  }
+
   &::placeholder {
     font-family: "Inter";
     font-style: normal;
@@ -32,6 +36,10 @@ const StyledInput = styled.input`
     line-height: 140%;
 
     color: #6b95b9;
+
+    @media (max-width: 335px) {
+      font-size: 15px;
+    }
   }
 
   & + span::before {
@@ -49,6 +57,10 @@ const StyledInput = styled.input`
     color: #ffb6c1;
     top: 10px;
     left: 10px;
+
+    @media (max-width: 335px) {
+      left: 1%;
+    }
   }
 `;
 
