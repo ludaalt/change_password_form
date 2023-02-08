@@ -4,4 +4,4 @@
 
 https://change-password-form-ludaalt.vercel.app/
 
-![Image alt](https://github.com/ludaalt/simple_form/raw/main/public/app.png)
+![Image alt](https://github.com/ludaalt/change_password_form/raw/main/public/app.png)
